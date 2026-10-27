@@ -306,7 +306,7 @@ img.start-logo{width:140px;height:140px;object-fit:contain;margin-bottom:44px;fi
   device-orientation-permission-ui="enabled: false" style="display:none;">
 
   <a-assets timeout="30000">
-    <a-asset-item id="preload0" src="3d-model/KaramisoRamen/KaramisoRamen.glb"></a-asset-item>
+    <a-asset-item id="preload0" src="3d-model/almondcrustedcrispy/almondcrustedcrispy.glb"></a-asset-item>
   </a-assets>
 
   <a-light id="lAmb" type="ambient" color="#ffffff" intensity="0.5"></a-light>
@@ -365,10 +365,13 @@ const CONFIG={
 };
 
 const dishes = [
-  { name:"Karamiso Ramen", folder:"KaramisoRamen", model:"KaramisoRamen.glb", thumb:"karamisoramen.png", scale:"4 4 4",       rotation:"90 90 90", tag:"Chef's pick", veg:false, spice:3 },
-  { name:"Shio Ramen",     folder:"ShioRamen",     model:"ShioRamen.glb",     thumb:"shioramen.png",     scale:"9 9 9",       rotation:"90 90 90", tag:"Light & clean", veg:false, spice:1 },
-  { name:"Shoyu Ramen",    folder:"ShoyuRamen",    model:"ShoyuRamen.glb",    thumb:"shoyuramen.png",    scale:"9 9 9",       rotation:"90 90 90", tag:"Most ordered", veg:false, spice:1 },
-  { name:"Tantanmen",      folder:"Tantanman",     model:"Tantanman.glb",     thumb:"tantanman.png",     scale:"1.5 1.5 1.5", rotation:"90 90 90", tag:"Bold & nutty", veg:false, spice:3 },
+  { name:"Almond Crusted Crispy", folder:"almondcrustedcrispy", model:"almondcrustedcrispy.glb", thumb:"almondcrustedcrispy.png", usdz:"almondcrustedcrispy.usdz", scale:"1 1 1", rotation:"0 0 0", tag:"Crunchy Delight", veg:true, spice:0 },
+  { name:"Cheesy Quiche",         folder:"cheesyquiche",         model:"cheesyquiche.glb",         thumb:"cheesyquiche.png",         usdz:"cheesyquiche.usdz",         scale:"1 1 1", rotation:"0 0 0", tag:"Baked Fresh",     veg:true, spice:0 },
+  { name:"Crispy Vegetable",      folder:"crispyvegetable",      model:"crispyvegetable.glb",      thumb:"crispyvegetable.png",      usdz:"crispyvegetable.usdz",      scale:"1 1 1", rotation:"0 0 0", tag:"Crispy & Fresh",  veg:true, spice:1 },
+  { name:"Karamiso Ramen",        folder:"KaramisoRamen",        model:"KaramisoRamen.glb",        thumb:"karamisoramen.png",        usdz:"KaramisoRamen.usdz",        scale:"4 4 4", rotation:"90 90 90", tag:"Chef's pick",    veg:false, spice:3 },
+  { name:"Shio Ramen",            folder:"ShioRamen",            model:"ShioRamen.glb",            thumb:"shioramen.png",            scale:"9 9 9", rotation:"90 90 90", tag:"Light & clean",   veg:false, spice:1 },
+  { name:"Shoyu Ramen",           folder:"ShoyuRamen",           model:"ShoyuRamen.glb",           thumb:"shoyuramen.png",           scale:"9 9 9", rotation:"90 90 90", tag:"Most ordered",    veg:false, spice:1 },
+  { name:"Tantanmen",             folder:"Tantanman",            model:"Tantanman.glb",            thumb:"tantanman.png",            scale:"1.5 1.5 1.5", rotation:"90 90 90", tag:"Bold & nutty", veg:false, spice:3 }
 ];
 
 var tablePaused=false, prepT=null;
@@ -1185,7 +1188,7 @@ function fbSelect(i){
   fbV.setAttribute('src',`3d-model/${d.folder}/${d.model}`); fbV.setAttribute('alt',d.name);
   if(d.usdz) fbV.setAttribute('ios-src',`3d-model/${d.folder}/${d.usdz}`); else fbV.removeAttribute('ios-src');
   $('#fbName').textContent=d.name;
-  $('#fbTags').innerHTML=[d.veg===undefined?'':`<span class="tag">${d.veg?'🟢 Veg':'🔴 Non-veg'}</span>`,d.spice?`<span class="tag">${'🌶'.repeat(dish.spice)}</span>`:'',d.tag?`<span class="tag">★ ${d.tag}</span>`:''].join('');
+  $('#fbTags').innerHTML=[d.veg===undefined?'':`<span class="tag">${d.veg?'🟢 Veg':'🔴 Non-veg'}</span>`,d.spice?`<span class="tag">${'🌶'.repeat(d.spice)}</span>`:'',d.tag?`<span class="tag">★ ${d.tag}</span>`:''].join('');
   fbCar.querySelectorAll('.dish-thumb').forEach((el,j)=>el.classList.toggle('active',j===i));
 }
 function openFallback(reason){
