@@ -383,14 +383,107 @@ const CONFIG={
   analyticsKey:'change-me'               // must match SECRET in the Apps Script, keeps strangers from sending fake events
 };
 const dishes = [
-  { name:"Karamiso Ramen", folder:"KaramisoRamen", model:"KaramisoRamen.glb", thumb:"karamisoramen.png", scale:"4 4 4",       rotation:"90 90 90", tag:"Chef's pick", veg:false, spice:3,
-    story:"Slow-simmered for hours in the Nilgiri mist." },
-  { name:"Shio Ramen",     folder:"ShioRamen",     model:"ShioRamen.glb",     thumb:"shioramen.png",     scale:"9 9 9",       rotation:"90 90 90", tag:"Light & clean", veg:false, spice:1,
-    story:"Clear, light and gently salted, like the morning air." },
-  { name:"Shoyu Ramen",    folder:"ShoyuRamen",    model:"ShoyuRamen.glb",    thumb:"shoyuramen.png",    scale:"9 9 9",       rotation:"90 90 90", tag:"Most ordered", veg:false, spice:1,
-    story:"Our most ordered bowl. Soy-rich, warm and comforting." },
-  { name:"Tantanmen",      folder:"Tantanman",     model:"Tantanman.glb",     thumb:"tantanman.png",     scale:"1.5 1.5 1.5", rotation:"90 90 90", tag:"Bold & nutty", veg:false, spice:3,
-    story:"Nutty sesame broth with a bold, spicy heart." },
+  const dishes = [
+  // ── Existing Ramen Dishes ──
+  { 
+    name: "Karamiso Ramen", 
+    folder: "KaramisoRamen", 
+    model: "KaramisoRamen.glb", 
+    thumb: "karamisoramen.png", 
+    scale: "4 4 4", 
+    rotation: "90 90 90", 
+    tag: "Chef's pick", 
+    veg: false, 
+    spice: 3,
+    story: "Slow-simmered for hours in the Nilgiri mist." 
+  },
+  { 
+    name: "Shio Ramen", 
+    folder: "ShioRamen", 
+    model: "ShioRamen.glb", 
+    thumb: "shioramen.png", 
+    scale: "9 9 9", 
+    rotation: "90 90 90", 
+    tag: "Light & clean", 
+    veg: false, 
+    spice: 1,
+    story: "Clear, light and gently salted, like the morning air." 
+  },
+  { 
+    name: "Shoyu Ramen", 
+    folder: "ShoyuRamen", 
+    model: "ShoyuRamen.glb", 
+    thumb: "shoyuramen.png", 
+    scale: "9 9 9", 
+    rotation: "90 90 90", 
+    tag: "Most ordered", 
+    veg: false, 
+    spice: 1,
+    story: "Our most ordered bowl. Soy-rich, warm and comforting." 
+  },
+  { 
+    name: "Tantanmen", 
+    folder: "Tantanman", 
+    model: "Tantanman.glb", 
+    thumb: "tantanman.png", 
+    scale: "1.5 1.5 1.5", 
+    rotation: "90 90 90", 
+    tag: "Bold & nutty", 
+    veg: false, 
+    spice: 3,
+    story: "Nutty sesame broth with a bold, spicy heart." 
+  },
+
+  // ── Newly Added Dishes from 3d-model/ ──
+  { 
+    name: "Almond Crusted Crispy", 
+    folder: "almondcrustedcrispy", 
+    model: "almondcrustedcrispy.glb", 
+    thumb: "almondcrustedcrispy.png", 
+    scale: "1 1 1", 
+    rotation: "90 90 90", 
+    tag: "Crunchy & Rich", 
+    veg: false, 
+    spice: 0,
+    story: "Golden toasted almond crust with a tender, flavorful center." 
+  },
+  { 
+    name: "Cheesy Quiche", 
+    folder: "cheesyquiche", 
+    model: "cheesyquiche.glb", 
+    thumb: "cheesyquiche.png", 
+    scale: "1 1 1", 
+    rotation: "90 90 90", 
+    tag: "Artisan Bake", 
+    veg: true, 
+    spice: 0,
+    story: "Flaky golden crust baked with molten gourmet cheese and herbs." 
+  },
+  { 
+    name: "Crispy Vegetable", 
+    folder: "crispyvegetable", 
+    model: "crispyvegetable.glb", 
+    thumb: "crispyvegetable.png", 
+    scale: "1 1 1", 
+    rotation: "90 90 90", 
+    tag: "Crispy Crunch", 
+    veg: true, 
+    spice: 1,
+    story: "Farm-fresh garden vegetables tossed in a light, crispy tempura coating." 
+  },
+  { 
+    name: "Mango Petal Tower", 
+    folder: "mangopetaltower", 
+    model: "mangopetaltower.glb", 
+    thumb: "mangopetaltower.png", 
+    scale: "1 1 1", 
+    rotation: "90 90 90", 
+    tag: "Signature Dessert", 
+    veg: true, 
+    spice: 0,
+    story: "Delicately layered fresh mango petals over silky whipped cream and sponge." 
+  }
+];
 ];
 
 var tablePaused=false, prepT=null;
